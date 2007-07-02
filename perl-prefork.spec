@@ -2,12 +2,12 @@
 
 Summary:	Optimize module loading across forking and non-forking scenarios
 Name:		perl-%{real_name}
-Version:	1.00
-Release:	%mkrel 2
+Version:	1.01
+Release:	%mkrel 1
 License:	GPL or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/%{real_name}-%{version}.tar.bz2
+Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/%{real_name}-%{version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	perl(Test::More) >= 0.47
 BuildRequires:	perl(File::Spec) >= 0.82
