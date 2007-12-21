@@ -14,6 +14,7 @@ BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl(Scalar::Util) >= 1.10
 BuildRequires:	perl-ExtUtils-AutoInstall >= 0.49
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The prefork pragma is intended to allow module writers to optimise
