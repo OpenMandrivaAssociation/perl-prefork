@@ -13,6 +13,7 @@ BuildRequires:	perl(Test::More) >= 0.47
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl(Scalar::Util) >= 1.10
 BuildRequires:	perl-ExtUtils-AutoInstall >= 0.49
+Provides:   perl(prefork)
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
