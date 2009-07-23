@@ -1,21 +1,23 @@
-%define real_name prefork
+%define upstream_name    prefork
+%define upstream_version 1.04
+
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
 
 Summary:	Optimize module loading across forking and non-forking scenarios
-Name:		perl-%{real_name}
-Version:	1.03
-Release:	%mkrel 1
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{real_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/%{real_name}-%{version}.tar.gz
-BuildRequires:	perl-devel
+URL:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/A/AD/ADAMK/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl(Test::More) >= 0.47
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl(Scalar::Util) >= 1.10
 BuildRequires:	perl-ExtUtils-AutoInstall >= 0.49
-Provides:   perl(prefork)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
+Provides:   perl(prefork)
 
 %description
 The prefork pragma is intended to allow module writers to optimise
@@ -38,7 +40,7 @@ fork, and that the modules previously mentioned by the Loaders should be
 loaded immediately.
 
 %prep
-%setup -q -n %{real_name}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
