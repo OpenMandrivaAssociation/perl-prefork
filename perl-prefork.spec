@@ -1,15 +1,13 @@
 %define upstream_name    prefork
-%define upstream_version 1.05
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.05
+Release:	2
 
 Summary:	Optimize module loading across forking and non-forking scenarios
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://github.com/karenetheridge/prefork
-Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/prefork-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/prefork-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -41,7 +39,7 @@ fork, and that the modules previously mentioned by the Loaders should be
 loaded immediately.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -62,8 +60,7 @@ make test
 * Thu Jul 23 2009 Jérôme Quelin <jquelin@mandriva.org> 1.40.0-1mdv2010.0
 + Revision: 398938
 - update to 1.04
-- using %%perl_convert_version
-- fixed license field
+- using %1.05 fixed license field
 
 * Wed May 06 2009 Jérôme Quelin <jquelin@mandriva.org> 1.03-1mdv2010.0
 + Revision: 372655
